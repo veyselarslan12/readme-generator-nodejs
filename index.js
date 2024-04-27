@@ -1,5 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
+const generateMarkdown = require('./utils/generateMarkdown.js')
 const fs = require('fs')
 
 // TODO: Create an array of questions for user input
@@ -41,7 +42,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'instruction',
+        name: 'test',
         message: 'Add test instruction of the project.'
     },
     {
@@ -57,19 +58,26 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-
-
-
-
-
+function writeToFile(fileName, data) {
+    fs.writeFile('./README.md', data, (err) => {
+        if (err) throw err
+        console.log('README.md file created!')
+    })
+}
+// TODO: Ask the teacher what is this fileName
 
 
 // TODO: Create a function to initialize app
-function init() {}
-
-
+function init() {
+    inquirer.prompt(questions)
+    .then(answers => {
+        const readmeAnswers = generateMarkdown(answers);
+        writeToFile('README.md', readmeAnswers)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
 
 
 // Function call to initialize app
