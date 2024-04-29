@@ -47,7 +47,7 @@ const questions = [
     message: "Add test instruction of the project.",
   },
   {
-    type: "checkbox",
+    type: "list",
     name: "license",
     message: "Choose license of the project.",
     choices: ["MIT", "ISC", "Apache-2.0", "MPL-2.0", "ODbL", "Boost", "IPL-1.0", "Unlicense","PDDL" ],
@@ -55,8 +55,8 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(answers) {
-  fs.writeFile("./README.md", generateMarkdown(answers), (err) => {
+function writeToFile(content) {
+  fs.writeFile("./README.md", content, (err) => {
     if (err) throw err;
     console.log("README.md file created successfully!");
   });
@@ -66,9 +66,9 @@ function writeToFile(answers) {
 function init() {
   inquirer
     .prompt(questions)
-    .then((answers) => {
-      const readmeAnswers = generateMarkdown(answers);
-      writeToFile("README.md", readmeAnswers);
+    .then((answers) => { console.log(answers)
+      const readmeString = generateMarkdown(answers);
+      writeToFile(readmeString);
     })
     .catch((err) => {
       console.log(err);

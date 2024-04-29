@@ -59,37 +59,44 @@ function renderLicenseSection(license) {
   if (license) {
     const badge = renderLicenseBadge(license);
     const link = renderLicenseLink(license);
-    return `## License\n${badge}\nThis project is licensed under the [${license}](${link}) license.`
+    return `## License
+    ${badge}
+    This project is licensed under the [${license}](${link}) license.`
   }
 
 }
 
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(title, github, email, description, installation, usage, contribution, test, license, badge,) {
+function generateMarkdown({title, github, email, description, installation, usage, contribution, test, license, badge}) { console.log(badge)
   return `
-  # ${title} ${badge}
+  # ${title} ${renderLicenseBadge(license)}
+
   ## Description
   * ${description}
+
   ## Table of Contents
-  *[Installation](#installation)
-  *[Usage](#usage)
-  *[Licence](#licence)
-  *[Contributing](#contributing)
-  *[Tests](#tests)
-  *[Questions](#questions)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Licence](#licence)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
   ## Installation
   * ${installation}
+
   ## Usage
-  $ ${usage}
-  ## Licence
-  * ${license}
+  * ${usage}
+  
+  * ${renderLicenseSection(license)}
+
   ## Contributing Guidelines
   * ${contribution}
+
   ## Test Instructions
   * ${test}
-  ## License
-  * ${renderLicenseSection(license)}
+
   ## Questions
   * Here is the link to my [GitHub](https://github.com/${github}) profile.
   * How to reach me with additional questions? Here is my [email](${email}) address.
