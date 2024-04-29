@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown.js");
 const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -48,20 +48,19 @@ const questions = [
   },
   {
     type: "checkbox",
-    name: "licence",
-    message: "Choose licence of the project.",
+    name: "license",
+    message: "Choose license of the project.",
     choices: ["MIT", "ISC", "Apache-2.0", "MPL-2.0", "ODbL", "Boost", "IPL-1.0", "Unlicence","PDDL" ],
   },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile("./README.md", data, (err) => {
+function writeToFile(answers) {
+  fs.writeFile("./README.md", generateMarkdown(answers), (err) => {
     if (err) throw err;
-    console.log("README.md file created!");
+    console.log("README.md file created successfully!");
   });
 }
-// TODO: Ask the teacher what is this fileName
 
 // TODO: Create a function to initialize app
 function init() {

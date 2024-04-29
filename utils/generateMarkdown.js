@@ -11,13 +11,13 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(title, github, email, description, installation, usage, contribution, test, license) {
   return `
-  # ${data.title}
+  # ${title}
   ## Licence
-  * ${data.licence}
+  * ${license}
   ## Description
-  * ${data.description}
+  * ${description}
   ## Table of Contents
   *[Installation](#installation)
   *[Usage](#usage)
@@ -26,17 +26,17 @@ function generateMarkdown(data) {
   *[Tests](#tests)
   *[Questions](#questions)
   ## Installation
-  * ${data.installation}
+  * ${installation}
   ## Usage
-  $ ${data.usage}
+  $ ${usage}
   ## Licence
-  * ${data.licence}
+  * ${license}
   ## Contributing Guidelines
-  * ${data.contribution}
+  * ${contribution}
   ## Test Instructions
-  * ${data.test}
+  * ${test}
   ## Questions
-  * Here is the link to my [GitHub](https://github.com/${data.github}) profile.
+  * Here is the link to my [GitHub](https://github.com/${github}) profile.
   * How to reach me with additional questions? Here is my [email](${email}) address.
 
 `;
@@ -44,7 +44,7 @@ function generateMarkdown(data) {
 
 module.exports = generateMarkdown;
 
-// licence links
+// license links
 // MIT licence
 // [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 // Apache 2.0
