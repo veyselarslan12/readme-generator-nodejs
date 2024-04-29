@@ -50,7 +50,7 @@ const questions = [
     type: "checkbox",
     name: "license",
     message: "Choose license of the project.",
-    choices: ["MIT", "ISC", "Apache-2.0", "MPL-2.0", "ODbL", "Boost", "IPL-1.0", "Unlicence","PDDL" ],
+    choices: ["MIT", "ISC", "Apache-2.0", "MPL-2.0", "ODbL", "Boost", "IPL-1.0", "Unlicense","PDDL" ],
   },
 ];
 
