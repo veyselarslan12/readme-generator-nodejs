@@ -60,8 +60,8 @@ function renderLicenseSection(license) {
     const badge = renderLicenseBadge(license);
     const link = renderLicenseLink(license);
     return `## License
-    ${badge}
-    This project is licensed under the [${license}](${link}) license.`
+    \n${badge}\n
+  This project is licensed under the [${license}](${link}) license.`
   }
 
 }
@@ -78,9 +78,9 @@ function generateMarkdown({title, github, email, description, installation, usag
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Licence](#licence)
-  * [Contributing](#contributing)
-  * [Tests](#tests)
+  * [License](#license)
+  * [Contribution](#contribution)
+  * [Instructions](#instructions)
   * [Questions](#questions)
   
   ## Installation
@@ -89,12 +89,12 @@ function generateMarkdown({title, github, email, description, installation, usag
   ## Usage
   * ${usage}
   
-  * ${renderLicenseSection(license)}
+  ${renderLicenseSection(license)}
 
-  ## Contributing Guidelines
+  ## Contribution
   * ${contribution}
 
-  ## Test Instructions
+  ## Instructions
   * ${test}
 
   ## Questions
