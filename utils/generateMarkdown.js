@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   switch (license) {
@@ -26,7 +26,7 @@ function renderLicenseBadge(license) {
 
 }
 
-// TODO: Create a function that returns the license link
+// Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   switch (license) {
@@ -53,7 +53,7 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
+// Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license) {
@@ -67,7 +67,7 @@ function renderLicenseSection(license) {
 }
 
 
-// TODO: Create a function to generate markdown for README
+// Create a function to generate markdown for README
 function generateMarkdown({title, github, email, description, installation, usage, contribution, test, license, badge}) { console.log(badge)
   return `
   # ${title} ${renderLicenseBadge(license)}
@@ -107,6 +107,7 @@ function generateMarkdown({title, github, email, description, installation, usag
 module.exports = generateMarkdown;
 
 // license links
+
 // MIT licence
 // [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 // Apache 2.0

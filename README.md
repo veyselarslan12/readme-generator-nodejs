@@ -17,8 +17,9 @@
 
   ## Usage
   * In the terminal ```npm install inquirer``` and than ```node index.js```. After these codes application will start.All you need to do is typing your informations about your project and it will create README file for you.
+  * ![application](./images/application.png)
+  * ![readme](./images/readme.png)
 
-  
   ## License
     
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
